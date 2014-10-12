@@ -4,7 +4,7 @@ var properties = [];
  * Utils
  */
 var random = function(array) {
-	var rand = Math.round( Math.random()*(array.length-1) ) ;
+	var rand = Math.round( Math.random()*(array.length-1) );
 	return array[rand];
 };
 
@@ -28,17 +28,18 @@ var project_features = ['Security', 'Maintenance'];
 var community_features = ['Airport', 'Taxi', 'School', 'Super Market', 'Bar', 'Restaurant'];
 
 
-var fakeprop = {
+var fakeprops = {
 	/**
-	 * Function which generate a fake home object
+	 * Function which generates a fake house or ville
 	 */
-	gen_home: function(options) {
+	gen_house: function(options) {
+		var options = options || {};
 		return {
 			owner_id: options.owner_id || '1',
-			property_id: options.property_id || 'JGH-001',
+			property_id: options.property_id || 'JGH001',
 			type: 'home',
-			for: options.for || 'rent',
-			title: random(TITLE_ADJETIVES) + ' house in Cabarete, Dominican Republic',
+			for: options.for || random(['sale', 'rent']),
+			title: random(TITLE_ADJETIVES) + ' house in Cabarete, Dominican Republic.',
 			images: options.images || [
 				'home_img1.jpg',
 				'home_imgn.jpg'
@@ -62,7 +63,7 @@ var fakeprop = {
 
 
 	/**
-	 * Function which generate a fake apartment object
+	 * Function which generates a fake apartment object
 	 */
 	gen_apartment: function(options) {
 		return;
@@ -70,4 +71,4 @@ var fakeprop = {
 };
 
 
-module.exports = fakeprop;
+module.exports = fakeprops;
