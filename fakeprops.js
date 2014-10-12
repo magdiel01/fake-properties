@@ -34,17 +34,17 @@ var fakeprop = {
 	 */
 	gen_home: function(options) {
 		return {
-			owner_id: options.owner_id |'1',
-			property_id: options.property_id | 'JGH-001',
+			owner_id: options.owner_id || '1',
+			property_id: options.property_id || 'JGH-001',
 			type: 'home',
-			for: options.for | 'rent',
+			for: options.for || 'rent',
 			title: random(TITLE_ADJETIVES) + ' house in Cabarete, Dominican Republic',
-			images: options.images | [
+			images: options.images || [
 				'home_img1.jpg',
 				'home_imgn.jpg'
 			],
 			description: 'Description here!',
-			features: options.features | {
+			features: options.features || {
 				community_features: community_features,
 				property_features: home_ville_features,
 			},
