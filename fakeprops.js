@@ -29,7 +29,7 @@ var fakeprops = {
 	/**
 	 * Function which generates a fake house or ville
 	 */
-	genHouse: function(options) {
+	House: function(options) {
 		var options = options || {};
 		return {
 			owner_id: options.owner_id || '1',
@@ -38,8 +38,8 @@ var fakeprops = {
 			for: options.for || random(['sale', 'rent']),
 			title: random(config.titleAdjectives) + ' house in Cabarete, Dominican Republic.',
 			images: options.images || [
-				'home_img1.jpg',
-				'home_imgn.jpg'
+				'house_img1.jpg',
+				'house_imgn.jpg'
 			],
 			description: 'Description here!',
 			features: options.features || {
@@ -57,10 +57,12 @@ var fakeprops = {
 		};
 	},
 
+
+
 	/**
 	 * Function which generates a fake apartment object
 	 */
-	genApartment: function(options) {
+	Apartment: function(options) {
 		return;
 	}
 };
